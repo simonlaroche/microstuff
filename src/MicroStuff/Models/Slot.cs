@@ -19,5 +19,11 @@ namespace MicroStuff.Models
 		public int Id { get; set; }
         public TimeSpan Start { get; set; }
 		public TimeSpan End { get; set; }
+        
+        public  bool Equals(Slot other) => other?.Id == this.Id;
+        
+        public override bool Equals(object obj) => Equals(obj as Slot);
+        
+        public override int GetHashCode() => this.Id;
     }
 }
